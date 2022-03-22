@@ -1,5 +1,6 @@
 # storefront
-DJango Sample Project
+DJango Sample Project 
+source yt: https://www.youtube.com/watch?v=rHux0gMZ3Eg
 ## DJango Project
 ### Install basic requirements
 ### Check python version
