@@ -36,3 +36,8 @@ $cd storefront
 $django-admin startproject storefront .
   -dot (.) means it will the existing folder and will not create new storefront folder.
 ```
+### Run Django Project
+```
+$cd storefront
+$python manage.py runserver <custom port number; default 8000>
+```
