@@ -41,3 +41,11 @@ $django-admin startproject storefront .
 $cd storefront
 $python manage.py runserver <custom port number; default 8000>
 ```
+### Check Pipe python interpreter path
+```
+$cd storefront
+$pipenv --venv
+   -can be used in vscode to setup the python interpreter (vscode used the default python interpreter installed globally)
+   result: /root/.local/share/virtualenvs/storefront-6hn45Vis
+   to add in vscode: /root/.local/share/virtualenvs/storefront-6hn45Vis/bin/python
+```
