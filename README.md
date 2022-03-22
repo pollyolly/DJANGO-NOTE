@@ -13,8 +13,10 @@ $pip3 install pipenv
   - dependency management tool to install python dependencies in 
                virtual environment to prevent clash with other dependencies.
 ```
-### Install django
+### Install django in the project
 ```
+$mkdir storefront
+$cd storefront
 $pipenv install django
   - install django in virtual environment
 ```
