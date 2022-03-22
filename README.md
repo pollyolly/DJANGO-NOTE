@@ -20,3 +20,8 @@ $cd storefront
 $pipenv install django
   - install django in virtual environment
 ```
+### pip3 files
+```
+Pipfile - just like package.json where application dependencies are written. django="*" (latest or any version of django)
+```
+### 
