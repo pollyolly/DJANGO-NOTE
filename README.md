@@ -30,4 +30,9 @@ $vi Pipfile - just like package.json where application dependencies are written.
 $cd storefront
 $pipenv shell
 ```
-
+### Start django new project
+```
+$cd storefront
+$django-admin startproject storefront .
+  -dot (.) means it will the existing folder and will not create new storefront folder.
+```
