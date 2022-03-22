@@ -6,6 +6,6 @@ DJango Sample Project
 check python version
 $python3 --version
 
-install pipe
+install pip3 - dependency management tool to install python dependencies in virtual environment to prevent clash with other dependencies.
 $pip3 install pipenv
 ```
