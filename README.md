@@ -1,0 +1,2 @@
+# storefront
+DJango Sample Project
