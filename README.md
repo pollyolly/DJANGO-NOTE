@@ -49,3 +49,8 @@ $pipenv --venv
    result: /root/.local/share/virtualenvs/storefront-6hn45Vis
    to add in vscode: /root/.local/share/virtualenvs/storefront-6hn45Vis/bin/python
 ```
+### Creating New App (Take Note Django is a collection of App like modular in mind)
+```
+$cd storefront
+$cd python manage.py startapp playground
+```
