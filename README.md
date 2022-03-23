@@ -58,6 +58,8 @@ $cd python manage.py startapp playground
 ```
 ### Django Debug Toolbar
 ```
+https://django-debug-toolbar.readthedocs.io/en/latest/installation.html
+
 $pipenv install django-debug-toolbar
 $cd storefront
 $vi settings.py
