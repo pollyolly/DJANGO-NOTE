@@ -66,6 +66,16 @@ $vi settings.py
     INSTALLED_APPS = [
       'debug_toolbar'
     ]
+    MIDDLEWARE = [
+      'debug_toolbar.middleware.DebugToolbarMiddleware'
+    ]
+    INTERNAL_IPS = [
+    # ...
+      "127.0.0.1",
+    # ...
+    ]
 $vi urls.py
-    path('_debug_/', include(debug_toolbar.urls))
+    urlpatterns = [
+      path('_debug_/', include(debug_toolbar.urls))
+    ]
 ```
