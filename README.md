@@ -56,3 +56,7 @@ $pipenv --venv
 $cd storefront
 $cd python manage.py startapp playground
 ```
+### Django Debug Toolbar
+```
+$pipenv install django-debug-toolbar
+```
