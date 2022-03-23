@@ -59,4 +59,11 @@ $cd python manage.py startapp playground
 ### Django Debug Toolbar
 ```
 $pipenv install django-debug-toolbar
+$cd storefront
+$vi settings.py
+    INSTALLED_APPS = [
+      'debug_toolbar'
+    ]
+$vi urls.py
+    path('_debug_/', include(debug_toolbar.urls))
 ```
