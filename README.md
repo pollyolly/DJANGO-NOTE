@@ -30,6 +30,7 @@ $vi Pipfile - just like package.json where application dependencies are written.
 ```
 $cd storefront
 $pipenv shell
+ -you always need to do this when accessing the project after exit the project
 ```
 ### Start django new project
 ```
