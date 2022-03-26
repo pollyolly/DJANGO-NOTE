@@ -54,7 +54,7 @@ $pipenv --venv
 ### Creating New App (Take Note Django is a collection of App like modular in mind)
 ```
 $cd storefront
-$cd python manage.py startapp playground
+$python manage.py startapp playground
 ```
 ### Django Debug Toolbar
 ```
