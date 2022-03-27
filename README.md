@@ -81,3 +81,8 @@ $vi urls.py
       path('_debug_/', include(debug_toolbar.urls))
     ]
 ```
+### Djang Admin Configuration
+```
+After  editing models.py
+$python manage.py makemigrations
+```
