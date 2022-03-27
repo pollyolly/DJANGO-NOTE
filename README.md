@@ -93,4 +93,5 @@ $python manage.py migrate
 ### Django Create Super User
 ```
 $python manage.py createsuperuser
+   - this will create admin account fro django default admin login form
 ```
