@@ -75,6 +75,8 @@ $vi settings.py
     # ...
     ]
 $vi urls.py
+    from django.urls import path, include
+    import debug_toolbar
     urlpatterns = [
       path('_debug_/', include(debug_toolbar.urls))
     ]
