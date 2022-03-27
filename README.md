@@ -1,4 +1,4 @@
-# storefront
+# DJANGO Note
 DJango Sample Project 
 source yt: https://www.youtube.com/watch?v=rHux0gMZ3Eg
 ## DJango Project
