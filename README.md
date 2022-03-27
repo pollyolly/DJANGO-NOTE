@@ -81,8 +81,16 @@ $vi urls.py
       path('_debug_/', include(debug_toolbar.urls))
     ]
 ```
-### Djang Admin Configuration
+### Django Models and Migrations
 ```
 After  editing models.py
 $python manage.py makemigrations
+  - this will run latest migrations
+$python manage.py migrate
+  - this will apply latest migrations
+
+```
+### Django Create Super User
+```
+$python manage.py createsuperuser
 ```
