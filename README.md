@@ -95,3 +95,7 @@ $python manage.py migrate
 $python manage.py createsuperuser
    - this will create admin account fro django default admin login form
 ```
+### Django Admin Modification
+```
+https://realpython.com/customize-django-admin-python/
+```
