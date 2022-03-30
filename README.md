@@ -1,9 +1,13 @@
 # DJANGO Note
 DJango Sample Project 
+```
 source yt: https://www.youtube.com/watch?v=rHux0gMZ3Eg
-Django Tutorials
+```
+### Django Tutorials
+```
 https://realpython.com/customize-django-admin-python/
 https://books.agiliq.com/projects/django-admin-cookbook/en/latest/export.html
+```
 ## DJango Project
 ### Install basic requirements
 ### Check python version
