@@ -1,6 +1,9 @@
 # DJANGO Note
 DJango Sample Project 
 source yt: https://www.youtube.com/watch?v=rHux0gMZ3Eg
+Django Tutorials
+https://realpython.com/customize-django-admin-python/
+https://books.agiliq.com/projects/django-admin-cookbook/en/latest/export.html
 ## DJango Project
 ### Install basic requirements
 ### Check python version
@@ -94,8 +97,4 @@ $python manage.py migrate
 ```
 $python manage.py createsuperuser
    - this will create admin account fro django default admin login form
-```
-### Django Admin Modification
-```
-https://realpython.com/customize-django-admin-python/
 ```
