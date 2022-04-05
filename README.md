@@ -41,7 +41,12 @@ $pipenv shell
 ```
 ### MySQL Client
 ```
-$pip install mysqlclient
+$pip install pymysql
+
+Edit __init__.py in main application
+
+import pymysql
+pymysql.install_as_MySQLdb()
 ```
 ### Start django new project
 ```
