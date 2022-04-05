@@ -48,6 +48,19 @@ Edit __init__.py in main application
 import pymysql
 pymysql.install_as_MySQLdb()
 ```
+### MySQL Connection
+```
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'djangoblog',
+        'USER': 'django',
+        'PASSWORD': 'Iamdjangouser23',
+        'HOST': 'localhost',
+        'PORT': '3306'
+    }
+}
+```
 ### Start django new project
 ```
 $cd storefront
