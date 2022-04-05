@@ -7,6 +7,7 @@ source yt: https://www.youtube.com/watch?v=rHux0gMZ3Eg
 ```
 https://realpython.com/customize-django-admin-python/
 https://books.agiliq.com/projects/django-admin-cookbook/en/latest/export.html
+https://www.digitalocean.com/community/tutorials/how-to-set-up-django-with-postgres-nginx-and-gunicorn-on-ubuntu-18-04#step-3-creating-a-python-virtual-environment-for-your-project
 ```
 ## DJango Project
 ### Install basic requirements
