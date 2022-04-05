@@ -47,9 +47,9 @@ Edit __init__.py in main application
 
 import pymysql
 pymysql.install_as_MySQLdb()
-```
-### MySQL Connection
-```
+
+Edit settings.py in main application
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
