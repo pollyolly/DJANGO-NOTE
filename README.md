@@ -39,6 +39,10 @@ $cd storefront
 $pipenv shell
  -you always need to do this when accessing the project after exit the project
 ```
+### MySQL Client
+```
+$pip install mysqlclient
+```
 ### Start django new project
 ```
 $cd storefront
