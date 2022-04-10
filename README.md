@@ -132,7 +132,7 @@ $cd djangoblog
 $pipenv shell
 $pipenv install gunicorn
 Test Gunicorn if works inside pipenv
-$gunicorn --bind 0.0.0.0:8000 tutorial.wsgi:application 
+$gunicorn --bind 0.0.0.0:8000 djangoblog.wsgi:application 
 
 
 ```
