@@ -126,3 +126,13 @@ $python manage.py migrate
 $python manage.py createsuperuser
    - this will create admin account fro django default admin login form
 ```
+### Django Gunicorn
+```
+$cd djangoblog
+$pipenv shell
+$pipenv install gunicorn
+Test Gunicorn if works inside pipenv
+$gunicorn --bind 0.0.0.0:8000 tutorial.wsgi:application 
+
+
+```
