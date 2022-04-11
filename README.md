@@ -11,6 +11,7 @@ https://www.digitalocean.com/community/tutorials/how-to-set-up-django-with-postg
 https://www.youtube.com/watch?v=fx80N0eQOos&list=PLlM3i4cwc8zBRQOGXuLrCLNfpVOuVLuwZ&index=7
 https://medium.com/@jacobtamus/deploying-django-rest-mariadb-gunicorn-supervisor-nginx-on-centos-7-linux-990ca877e72b
 https://arctype.com/blog/install-django-ubuntu/
+https://www.youtube.com/watch?v=lgK238BvuL0
 ```
 ## DJango Project
 ### Install basic requirements
