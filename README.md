@@ -115,6 +115,12 @@ $vi urls.py
       path('_debug_/', include(debug_toolbar.urls))
     ]
 ```
+### Django Static Files Deployment
+```
+$cd djangoblog
+$mkdir static
+$python manage.py collectstatic
+```
 ### Django Models and Migrations
 ```
 After  editing models.py
