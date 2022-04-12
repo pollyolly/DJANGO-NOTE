@@ -118,6 +118,13 @@ $vi urls.py
 ```
 ### Django Static Files Deployment
 ```
+settings.py
+STATIC_URL = '/staticflies/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'staticfiles/bootstrap_album') #mapping location of directories
+]
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles") #set where collectstatic copy
+
 $cd djangoblog
 $mkdir static
 $python manage.py collectstatic
