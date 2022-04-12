@@ -124,7 +124,14 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'staticfiles/bootstrap_album') #mapping location of directories
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles") #set where collectstatic copy
+```
+```
+templating
+{% load static %}
 
+<link href="{% static 'bootstrap.min.css' %}" rel="stylesheet">
+```
+```
 $cd djangoblog
 $mkdir staticflies
 $python manage.py collectstatic
