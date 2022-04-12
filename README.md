@@ -126,7 +126,7 @@ STATICFILES_DIRS = [
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles") #set where collectstatic copy
 
 $cd djangoblog
-$mkdir static
+$mkdir staticflies
 $python manage.py collectstatic
 ```
 ### Django Models and Migrations
