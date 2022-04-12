@@ -123,7 +123,7 @@ STATIC_URL = '/staticflies/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'staticfiles/bootstrap_album') #mapping location of directories
 ]
-STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles") #set where collectstatic copy
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles") #set where collectstatic copy and put the files
 ```
 ```
 templating
