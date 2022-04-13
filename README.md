@@ -119,6 +119,9 @@ $vi urls.py
 ### Django Static Files Deployment
 ```
 settings.py
+INSTALLED_APPS = [
+  'django.contrib.staticfiles'
+]
 STATIC_URL = '/staticflies/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'staticfiles/bootstrap_album') #mapping location of directories
@@ -135,6 +138,34 @@ templating
 $cd djangoblog
 $mkdir staticflies
 $python manage.py collectstatic
+```
+### Django Media Files
+```
+settings.py
+MEDIA_URL = '/uploaded_files/'
+MEDIA_ROOT = os.path.join(BASE_DIR, "")
+
+TEMPLATES = [
+    {
+        'OPTIONS': {
+            'context_processors': [
+                'django.template.context_processors.media' #To access media files {{MEDIA_URL}}
+            ],
+        },
+    },
+]
+```
+```
+templating
+<img width="100%" height="225" src="{{ MEDIA_URL }}{{post.thumbnail }}">
+```
+```
+urls.py
+from django.conf import settings
+from django.conf.urls.static import static
+urlpatterns = [
+  
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 ```
 ### Django Models and Migrations
 ```
