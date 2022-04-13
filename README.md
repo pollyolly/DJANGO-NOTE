@@ -160,7 +160,8 @@ templating
 <img width="100%" height="225" src="{{ MEDIA_URL }}{{post.thumbnail }}">
 ```
 ```
-urls.py
+main application urls.py
+
 from django.conf import settings
 from django.conf.urls.static import static
 urlpatterns = [
