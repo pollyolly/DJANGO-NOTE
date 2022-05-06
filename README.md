@@ -2,6 +2,7 @@
 DJango Sample Project 
 ```
 source yt: https://www.youtube.com/watch?v=rHux0gMZ3Eg
+articles: https://django.fun/
 ```
 ### Django Tutorials
 ```
