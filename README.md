@@ -35,7 +35,7 @@ $cd storefront
 $pipenv install django
   - install django in virtual environment
 ```
-### pip3 files
+### pip files modules generate
 ```
 $pipenv shell
 $cd storefront
