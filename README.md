@@ -37,7 +37,9 @@ $pipenv install django
 ```
 ### pip3 files
 ```
+$pipenv shell
 $cd storefront
+$pipenv run pip freeze requirements.txt
 $vi Pipfile - just like package.json where application dependencies are written. django="*" (latest or any version of django)
 ```
 ### pip list
