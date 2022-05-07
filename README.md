@@ -40,6 +40,10 @@ $pipenv install django
 $cd storefront
 $vi Pipfile - just like package.json where application dependencies are written. django="*" (latest or any version of django)
 ```
+### pip list
+```
+$pip list - check django installed modules
+```
 ### Activate Virtual Environment to use python interpreter inside not globally
 ```
 $cd storefront
