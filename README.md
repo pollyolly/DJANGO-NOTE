@@ -48,7 +48,7 @@ $pip list - check django installed modules
 ```
 ### pipenv list ###
 ```
-$pipenv run pip list requirements.txt
+$pipenv run pip freeze requirements.txt
 ```
 ### Activate Virtual Environment to use python interpreter inside not globally
 ```
