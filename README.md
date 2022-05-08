@@ -46,6 +46,10 @@ $vi Pipfile - just like package.json where application dependencies are written.
 ```
 $pip list - check django installed modules
 ```
+### pipenv list ###
+```
+$pipenv run pip list requirements.txt
+```
 ### Activate Virtual Environment to use python interpreter inside not globally
 ```
 $cd storefront
