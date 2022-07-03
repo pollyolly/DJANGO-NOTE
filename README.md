@@ -14,6 +14,7 @@ https://medium.com/@jacobtamus/deploying-django-rest-mariadb-gunicorn-supervisor
 https://arctype.com/blog/install-django-ubuntu/
 https://www.youtube.com/watch?v=lgK238BvuL0
 https://www.digitalocean.com/community/tutorials/how-to-set-up-django-with-postgres-nginx-and-gunicorn-on-ubuntu-20-04
+https://preneure.com/the-ultimate-django-cheat-sheet/
 ```
 ## DJango Project
 ### Install basic requirements
