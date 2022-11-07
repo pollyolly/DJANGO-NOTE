@@ -57,6 +57,37 @@ $cd storefront
 $pipenv shell
  -you always need to do this when accessing the project after exit the project
 ```
+### Postgre Client
+```
+https://www.psycopg.org/install/
+
+$sudo apt install python3-dev libpq-dev
+$pip install psycopg2
+```
+```
+settings.py
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'OPTIONS': {
+            'service': 'my_service',
+            'passfile': '.my_pgpass',
+        },
+    }
+}
+```
+```
+pg_service.conf
+[my_service]
+host=localhost
+user=USER
+dbname=NAME
+port=5432
+```
+```
+.my_pgpass
+localhost:5432:NAME:USER:PASSWORD
+```
 ### MySQL Client
 ```
 $pip install pymysql
