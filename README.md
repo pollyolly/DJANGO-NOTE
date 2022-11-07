@@ -83,7 +83,7 @@ DATABASES = {
 ```
 $cd storefront
 $django-admin startproject storefront .
-  -dot (.) means it will the existing folder and will not create new storefront folder.
+  -dot (.) means it will the use existing folder and will not create new storefront folder.
 ```
 ### Run Django Project
 ```
