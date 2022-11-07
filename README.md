@@ -58,9 +58,17 @@ $pipenv shell
  -you always need to do this when accessing the project after exit the project
 ```
 ### Postgre Client
-```
-https://www.psycopg.org/install/
+[Doc](https://www.psycopg.org/install/)
 
+[Failed install psycopg](https://stackoverflow.com/questions/34304833/failed-building-wheel-for-psycopg2-macosx-using-virtualenv-and-pip)
+```
+// Update if Failed to install
+$cd djangproject
+$pip list --outdated
+$pip install --upgrade wheel
+$pip install --upgrade setuptools
+```
+```
 $sudo apt install python3-dev libpq-dev
 $pip install psycopg2
 ```
