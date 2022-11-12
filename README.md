@@ -31,8 +31,8 @@ $pip3 install pipenv
 ```
 ### Install django in the project
 ```
-$mkdir storefront
-$cd storefront
+$mkdir djangoblog
+$cd djangoblog
 $pipenv shell
 $pipenv install django
   - install django in virtual environment
@@ -40,7 +40,7 @@ $pipenv install django
 ### pip files modules generate
 ```
 $pipenv shell
-$cd storefront
+$cd djangoblog
 $pipenv run pip freeze requirements.txt
 $vi Pipfile - just like package.json where application dependencies are written. django="*" (latest or any version of django)
 ```
@@ -54,7 +54,7 @@ $pipenv run pip freeze requirements.txt
 ```
 ### Activate Virtual Environment to use python interpreter inside not globally
 ```
-$cd storefront
+$cd djangoblog
 $pipenv shell
  -you always need to do this when accessing the project after exit the project
 ```
@@ -64,7 +64,7 @@ $pipenv shell
 [Failed install psycopg](https://stackoverflow.com/questions/34304833/failed-building-wheel-for-psycopg2-macosx-using-virtualenv-and-pip)
 ```
 // Update if Failed to install
-$cd djangproject
+$cd djangoblog
 $pip list --outdated
 $pip install --upgrade wheel
 $pip install --upgrade setuptools
@@ -121,40 +121,40 @@ DATABASES = {
 ```
 ### Start django new project
 ```
-$cd storefront
-$django-admin startproject storefront .
+$cd djangoblog
+$django-admin startproject djangoblog .
   -dot (.) means it will the use existing folder and will not create new storefront folder.
   
  
  settings.py
  INSTALLED_APPS = [
-  storefront //Created Apps are Added here
+  djangoblog //Created Apps are Added here
  ]
 ```
 ### Run Django Project
 ```
-$cd storefront
+$cd djangoblog
 $python manage.py runserver <custom port number; default 8000>
 ```
 ### Check Pipe python interpreter path
 ```
-$cd storefront
+$cd djangoblog
 $pipenv --venv
    -can be used in vscode to setup the python interpreter (vscode used the default python interpreter installed globally)
-   result: /root/.local/share/virtualenvs/storefront-6hn45Vis
-   to add in vscode: /root/.local/share/virtualenvs/storefront-6hn45Vis/bin/python
+   result: /root/.local/share/virtualenvs/djangoblog-6hn45Vis
+   to add in vscode: /root/.local/share/virtualenvs/djangoblog-6hn45Vis/bin/python
 ```
 ### Creating New App (Take Note Django is a collection of App like modular in mind)
 ```
-$cd storefront
-$python manage.py startapp playground
+$cd djangoblog
+$python manage.py startapp blogpost
 ```
 ### Django Debug Toolbar
 ```
 https://django-debug-toolbar.readthedocs.io/en/latest/installation.html
 
 $pipenv install django-debug-toolbar
-$cd storefront
+$cd djangoblog
 $vi settings.py
     INSTALLED_APPS = [
       'debug_toolbar'
