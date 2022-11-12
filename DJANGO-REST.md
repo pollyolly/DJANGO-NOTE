@@ -76,3 +76,36 @@ class Flipbooks(models.Model):
     def __str__(self):
         return self.filelink
 ```
+```
+$python manage.py makemigrations
+  - this will run latest migrations
+$python manage.py migrate
+  - this will apply latest migrations
+```
+Setup StaticFiles
+```
+$cd flipbook
+$mkdir staticfiles && chmod 775 staticfiles
+```
+```
+flipbook/flipbook/settings.py
+INSTALLED_APPS = [
+  'django.contrib.staticfiles'
+]
+STATIC_URL = '/staticflies/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'staticfiles/bootstrap_album') #mapping location of directories
+]
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles") #set where collectstatic copy and put the files
+```
+Collect StaticFiles
+```
+$cd flipbook
+$python manage.py collectstatic
+```
+Access Rest Framework
+```
+$cd flipbook
+$python manage.py runserver 8585
+http://127.0.0.1:8585/apiOverview/
+```
