@@ -123,6 +123,12 @@ DATABASES = {
 $cd storefront
 $django-admin startproject storefront .
   -dot (.) means it will the use existing folder and will not create new storefront folder.
+  
+ 
+ settings.py
+ INSTALLED_APPS = [
+  storefront //Created Apps are Added here
+ ]
 ```
 ### Run Django Project
 ```
