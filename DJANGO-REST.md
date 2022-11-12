@@ -22,6 +22,8 @@ $django-admin startproject flipbook .
 Create Project Base folder
 ```
 flipbook/flipbook/settings.py
+DEBUG = True
+ALLOWED_HOSTS = ['*']
  INSTALLED_APPS = [
   rest_framework,
   flipbook
