@@ -33,6 +33,7 @@ $pip3 install pipenv
 ```
 $mkdir storefront
 $cd storefront
+$pipenv shell
 $pipenv install django
   - install django in virtual environment
 ```
