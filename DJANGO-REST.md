@@ -26,6 +26,15 @@ flipbook/flipbook/settings.py
   rest_framework,
   flipbook
  ]
+ ```
+ ```
+flipbook/flipbook/urls.py
+from django.contrib import admin
+from django.urls import path, include
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', include('api.urls'))
+]
 ```
 Create app
 ```
@@ -37,6 +46,33 @@ INSTALLED_APPS = [
   flipbook,
   api
  ]
- 
-
+ ```
+ ```
+flipbook/api/urls.py
+from django.urls import path, include
+from . import views
+urlpatterns = [
+    path('apiOverview/', views.apiOverview, name="apiOverview")
+]
+```
+```
+flipbook/api/views.py
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+@api_view(['GET'])
+def apiOverview(request):
+    api_url = {
+            'Test' : '',
+    }
+    return Response(api_url)
+```
+```
+flipbook/api/models.py
+from django.db import models
+class Flipbooks(models.Model):
+    filelink = models.CharField(max_length=255)
+    updated = models.DateTimeField(auto_now=True)
+    created = models.DateTimeField(auto_now_add=True)
+    def __str__(self):
+        return self.filelink
 ```
