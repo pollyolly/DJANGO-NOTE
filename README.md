@@ -5,15 +5,15 @@ source yt: https://www.youtube.com/watch?v=rHux0gMZ3Eg
 articles: https://django.fun/
 ```
 ### Django Tutorials
+[Django NginX Gunicorn Postgres](https://www.digitalocean.com/community/tutorials/how-to-set-up-django-with-postgres-nginx-and-gunicorn-on-ubuntu-20-04)
+
+[Setup Django NginX Gunicorn Postgres](https://arctype.com/blog/install-django-ubuntu/)
 ```
 https://realpython.com/customize-django-admin-python/
 https://books.agiliq.com/projects/django-admin-cookbook/en/latest/export.html
-https://www.digitalocean.com/community/tutorials/how-to-set-up-django-with-postgres-nginx-and-gunicorn-on-ubuntu-18-04#step-3-creating-a-python-virtual-environment-for-your-project
 https://www.youtube.com/watch?v=fx80N0eQOos&list=PLlM3i4cwc8zBRQOGXuLrCLNfpVOuVLuwZ&index=7
 https://medium.com/@jacobtamus/deploying-django-rest-mariadb-gunicorn-supervisor-nginx-on-centos-7-linux-990ca877e72b
-https://arctype.com/blog/install-django-ubuntu/
 https://www.youtube.com/watch?v=lgK238BvuL0
-https://www.digitalocean.com/community/tutorials/how-to-set-up-django-with-postgres-nginx-and-gunicorn-on-ubuntu-20-04
 https://preneure.com/the-ultimate-django-cheat-sheet/
 ```
 ## DJango Project
