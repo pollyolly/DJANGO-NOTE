@@ -58,6 +58,10 @@ $cd djangoblog
 $pipenv shell
  -you always need to do this when accessing the project after exit the project
 ```
+### Install Requirements
+```
+pip install -r requirements.txt
+```
 ### Postgre Client
 [Doc](https://www.psycopg.org/install/)
 
