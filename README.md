@@ -60,7 +60,7 @@ $pipenv shell
 ```
 ### Install Requirements
 ```
-pip install -r requirements.txt
+pip3 install -r requirements.txt
 ```
 ### Postgre Client
 [Doc](https://www.psycopg.org/install/)
