@@ -259,7 +259,7 @@ $gunicorn --bind 0.0.0.0:8000 djangoblog.wsgi:application
 ```
 $apt install nginx
 ```
-### Django NGINX Deployment
+## Django NGINX Deployment
 ```
 # /etc/systemd/system/gunicorn.socket
 [Unit]
