@@ -261,6 +261,7 @@ $apt install nginx
 ```
 ## Django NGINX Deployment
 ```
+# $touch gunicorn.socket
 # /etc/systemd/system/gunicorn.socket
 [Unit]
 Description=gunicorn socket
@@ -272,6 +273,7 @@ ListenStream=/run/gunicorn.sock
 WantedBy=sockets.target
 ```
 ```
+# $touch gunicorn.service
 #/etc/systemd/system/gunicorn.service
 
 [Unit]
