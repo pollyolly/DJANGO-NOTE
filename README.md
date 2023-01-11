@@ -259,3 +259,95 @@ $gunicorn --bind 0.0.0.0:8000 djangoblog.wsgi:application
 ```
 $apt install nginx
 ```
+### Django NGINX Deployment
+```
+# /etc/systemd/system/gunicorn.socket
+[Unit]
+Description=gunicorn socket
+
+[Socket]
+ListenStream=/run/gunicorn.sock
+
+[Install]
+WantedBy=sockets.target
+```
+```
+#/etc/systemd/system/gunicorn.service
+
+[Unit]
+Description=gunicorn daemon
+Requires=gunicorn.socket
+After=network.target
+
+[Service]
+User=root
+Group=www-data
+WorkingDirectory=/var/www/html/djangoblog
+#Path To Virtual Env (pipenv install gunicorn)
+ExecStart=/root/.local/share/virtualenvs/djangoblog-B6XojO9L/bin/gunicorn \
+          --access-logfile - \
+          --workers 3 \
+          --bind unix:/run/gunicorn.sock \
+          djangoblog.wsgi:application
+
+[Install]
+WantedBy=multi-user.target
+```
+Run gunicorn socket
+```
+$sudo systemctl start gunicorn.socket
+$sudo systemctl enable gunicorn.socket
+```
+Check Status
+```
+$sudo systemctl status gunicorn.socket
+```
+ Check File (Automatically created)
+```
+$file /run/gunicorn.sock
+```
+Check activate gunicorn
+```
+$curl --unix-socket /run/gunicorn.sock localhost
+
+$sudo systemctl status gunicorn
+```
+```
+#/etc/nginx/sites-available/djangoblog
+
+server {
+        listen 80;
+        listen [::]:80;
+
+        server_name djangoblog.iwebitechnology.xyz *.djangoblog.iwebitechnology.xyz;
+        return 301 https://djangoblog.iwebitechnology.xyz$request_uri;
+}
+
+server {
+        listen 443 ssl;
+
+        server_name djangoblog.iwebitechnology.xyz *.djangoblog.iwebitechnology.xyz;
+
+        #root /var/www/html/djangoblog;
+        #index index.html;
+
+        access_log /var/log/nginx/wpportfolio_access.log;
+        error_log  /var/log/nginx/wpportfolio_error.log debug;
+
+        #RSA certificate
+        ssl_certificate /etc/letsencrypt/live/djangoblog.iwebitechnology.xyz/fullchain.pem;
+        ssl_certificate_key /etc/letsencrypt/live/djangoblog.iwebitechnology.xyz/privkey.pem;
+
+
+        include /etc/letsencrypt/options-ssl-nginx.conf;
+
+        location /staticfiles/ {
+                root /var/www/html/djangoblog;
+        }
+
+        location / {
+                include proxy_params;
+                proxy_pass http://unix:/run/gunicorn.sock;
+        }
+}
+```
