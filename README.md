@@ -260,6 +260,7 @@ $gunicorn --bind 0.0.0.0:8000 djangoblog.wsgi:application
 $apt install nginx
 ```
 ## Django NGINX Deployment
+Gunicorn Service (wsgi)
 ```
 # $touch gunicorn.socket
 # /etc/systemd/system/gunicorn.socket
@@ -314,8 +315,34 @@ $curl --unix-socket /run/gunicorn.sock localhost
 
 $sudo systemctl status gunicorn
 ```
+Daphne Service (asgi)
+```
+[Unit]
+Description=WebSocket Daphne Service
+After=network.target
+
+[Service]
+Type=simple
+User=root
+Group=www-data
+WorkingDirectory=/var/www/html/djangoblog
+ExecStart=/root/.local/share/virtualenvs/djangoblog-B6XojO9L/bin/python /root/.local/share/virtualenvs/djangoblog-B6XojO9L/bin/daphne -b 0.0.0.0 -p 8991 djangoblog.asgi:application
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+```
+Start/Restart Daphne Service
+```
+systemctl daemon-reload
+systemctl start daphne.service
+systemctl status daphne.service
+```
 ```
 #/etc/nginx/sites-available/djangoblog
+upstream django-websocket {
+        server 127.0.0.1:8991;
+}
 
 server {
         listen 80;
@@ -346,10 +373,18 @@ server {
         location /staticfiles/ {
                 root /var/www/html/djangoblog;
         }
-
         location / {
                 include proxy_params;
                 proxy_pass http://unix:/run/gunicorn.sock;
+        }
+        location /ws/ {
+                proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+                proxy_set_header X-Real-IP $remote_addr;
+                proxy_set_header Host $http_host;
+                proxy_http_version 1.1;
+                proxy_set_header Upgrade $http_upgrade;
+                proxy_set_header Connection "upgrade";
+                proxy_pass http://django-websocket;
         }
 }
 ```
