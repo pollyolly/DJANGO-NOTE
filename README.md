@@ -317,6 +317,9 @@ $sudo systemctl status gunicorn
 ```
 Daphne Service (asgi)
 ```
+# $touch gunicorn.service
+#/etc/systemd/system/daphne.service
+
 [Unit]
 Description=WebSocket Daphne Service
 After=network.target
@@ -360,8 +363,8 @@ server {
         #root /var/www/html/djangoblog;
         #index index.html;
 
-        access_log /var/log/nginx/wpportfolio_access.log;
-        error_log  /var/log/nginx/wpportfolio_error.log debug;
+        access_log /var/log/nginx/djangoblog_access.log;
+        error_log  /var/log/nginx/djangoblog_error.log debug;
 
         #RSA certificate
         ssl_certificate /etc/letsencrypt/live/djangoblog.iwebitechnology.xyz/fullchain.pem;
