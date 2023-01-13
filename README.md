@@ -317,7 +317,7 @@ $sudo systemctl status gunicorn
 ```
 Daphne Service (asgi)
 ```
-# $touch gunicorn.service
+# $touch daphne.service
 #/etc/systemd/system/daphne.service
 
 [Unit]
