@@ -373,6 +373,11 @@ server {
 
         include /etc/letsencrypt/options-ssl-nginx.conf;
 
+        location /uploadedfiles/ {
+                autoindex on;
+                root /var/www/html/djangoblog;
+        }
+
         location /staticfiles/ {
                 root /var/www/html/djangoblog;
         }
