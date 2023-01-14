@@ -387,7 +387,6 @@ server {
                 proxy_http_version 1.1;
                 proxy_set_header Upgrade $http_upgrade;
                 proxy_set_header Connection "upgrade";
-                proxy_redirect off;
                 
                 proxy_pass http://unix:/run/gunicorn.sock;
         }
@@ -400,8 +399,6 @@ server {
                 proxy_http_version 1.1;
                 proxy_set_header Upgrade $http_upgrade;
                 proxy_set_header Connection "upgrade";
-                
-                proxy_buffering off; #for websockets
                 
                 proxy_pass http://django-websocket;
         }
