@@ -435,3 +435,9 @@ server {
 }
 ```
 [Mastodon Nginx Ref](https://github.com/mastodon/mastodon/blob/main/dist/nginx.conf)
+
+### Troubleshoot
+```
+Bad Request 400 
+1. check url should always end to "/" i.e. https://djangoblog.iwebitechnology.xyz/ or https://djangoblog.iwebitechnology.xyz/chat/join_me/
+```
