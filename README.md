@@ -352,6 +352,12 @@ systemctl status daphne.service
 upstream django-websocket {
         server 127.0.0.1:8991;
 }
+
+#$mkdir /var/cache/nginx folder
+#max_size=500m;
+#keys_zone=CACHE:10m
+proxy_cache_path /var/cache/nginx levels=1:2 keys_zone=CACHE:10m inactive=7d max_size=500m; #mastodon nginx proxy cache
+
 server {
         listen 80;
         listen [::]:80;
@@ -362,6 +368,10 @@ server {
         listen 443 ssl;
 
         server_name djangoblog.iwebitechnology.xyz *.djangoblog.iwebitechnology.xyz;
+
+        keepalive_timeout 70;
+        sendfile on;
+        client_max_body_size 1m;
 
         #root /var/www/html/djangoblog;
         #index index.html;
@@ -389,12 +399,24 @@ server {
                 proxy_set_header Connection "upgrade";
                 
                 proxy_pass http://unix:/run/gunicorn.sock;
+                
+                #mastodon nginx proxy cache
+                proxy_cache CACHE;
+                proxy_cache_valid 200 7d;
+                proxy_cache_valid 410 24h;
+                proxy_cache_use_stale error timeout updating http_500 http_502 http_503 http_504;
+                add_header X-Cached $upstream_cache_status;
+
+                tcp_nodelay on;
         }
         location /ws/ {
                 proxy_set_header Host $http_host;
                 proxy_set_header X-Real-IP $remote_addr;
                 proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
                 proxy_set_header X-Forwarded-Proto $scheme;
+                
+                proxy_buffering off;
+                proxy_redirect off;
                 
                 proxy_http_version 1.1;
                 proxy_set_header Upgrade $http_upgrade;
@@ -408,3 +430,4 @@ server {
         }
 }
 ```
+[Mastodon Nginx Ref](https://github.com/mastodon/mastodon/blob/main/dist/nginx.conf)
