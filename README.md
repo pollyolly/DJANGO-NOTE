@@ -352,15 +352,12 @@ systemctl status daphne.service
 upstream django-websocket {
         server 127.0.0.1:8991;
 }
-
 server {
         listen 80;
         listen [::]:80;
-
-        server_name djangoblog.iwebitechnology.xyz *.djangoblog.iwebitechnology.xyz;
+        #server_name djangoblog.iwebitechnology.xyz *.djangoblog.iwebitechnology.xyz;
         return 301 https://djangoblog.iwebitechnology.xyz$request_uri;
 }
-
 server {
         listen 443 ssl;
 
@@ -376,29 +373,41 @@ server {
         ssl_certificate /etc/letsencrypt/live/djangoblog.iwebitechnology.xyz/fullchain.pem;
         ssl_certificate_key /etc/letsencrypt/live/djangoblog.iwebitechnology.xyz/privkey.pem;
 
-
         include /etc/letsencrypt/options-ssl-nginx.conf;
 
         location /uploadedfiles/ {
-                autoindex on;
                 root /var/www/html/djangoblog;
         }
-
         location /staticfiles/ {
+                autoindex on; #use to automatically index.php/index.html
                 root /var/www/html/djangoblog;
         }
         location / {
                 include proxy_params;
-                proxy_pass http://unix:/run/gunicorn.sock;
-        }
-        location /ws/ {
-                proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-                proxy_set_header X-Real-IP $remote_addr;
-                proxy_set_header Host $http_host;
                 proxy_http_version 1.1;
                 proxy_set_header Upgrade $http_upgrade;
                 proxy_set_header Connection "upgrade";
+                proxy_redirect off;
+                
+                proxy_pass http://unix:/run/gunicorn.sock;
+        }
+        location /ws/ {
+                proxy_set_header Host $http_host;
+                proxy_set_header X-Real-IP $remote_addr;
+                proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+                proxy_set_header X-Forwarded-Proto $scheme;
+                
+                proxy_http_version 1.1;
+                proxy_set_header Upgrade $http_upgrade;
+                proxy_set_header Connection "upgrade";
+                
+                proxy_buffering off; #for websockets
+                
                 proxy_pass http://django-websocket;
+        }
+        error_page 500 502 503 504 /500.html;
+        location = /500.html {
+                root /var/www/html/djangoblog/staticfiles;
         }
 }
 ```
