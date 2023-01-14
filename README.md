@@ -394,6 +394,10 @@ server {
         }
         location / {
                 include proxy_params;
+                
+                proxy_buffering on; #enable some buff cache
+                proxy_redirect off; #disable other redirection config
+                
                 proxy_http_version 1.1;
                 proxy_set_header Upgrade $http_upgrade;
                 proxy_set_header Connection "upgrade";
@@ -415,7 +419,7 @@ server {
                 proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
                 proxy_set_header X-Forwarded-Proto $scheme;
                 
-                proxy_buffering off;
+                proxy_buffering off; #disable some buff cache
                 proxy_redirect off;
                 
                 proxy_http_version 1.1;
