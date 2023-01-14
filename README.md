@@ -424,7 +424,7 @@ server {
                 
                 proxy_pass http://django-websocket;
         }
-        error_page 500 502 503 504 /500.html;
+        error_page 404 500 502 503 504 /500.html;
         location = /500.html {
                 root /var/www/html/djangoblog/staticfiles;
         }
