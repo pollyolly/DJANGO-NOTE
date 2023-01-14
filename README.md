@@ -255,6 +255,12 @@ $pipenv install gunicorn
 Test Gunicorn if works inside pipenv
 $gunicorn --bind 0.0.0.0:8000 djangoblog.wsgi:application 
 ```
+### Check Deployment
+```
+$cd <project folder>
+$pipenv shell
+$python manage.py check --deploy
+```
 ### Django NGINX
 ```
 $apt install nginx
