@@ -446,10 +446,13 @@ server {
 ### Troubleshoot
 ```
 Bad Request 400 and Page not found (404) not working
-1. check url in template should use route path in href="{% 'homepage' %}" 
-2. possible nginx config, change to
+1. use incognito to browse changes
+2. check url in template should use route path in href="{% 'homepage' %}" 
+3. possible nginx config, change to
       proxy_set_header Host $host;
-3. increase wokers in gunicorn.service
+4. increase wokers in gunicorn.service
     workers = 6
-4. possible insufficient memory 
+5. restart gunicorn
+    service gunicorn restart
+6. possible insufficient memory 
 ```
