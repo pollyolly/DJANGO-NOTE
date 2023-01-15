@@ -445,12 +445,11 @@ server {
 
 ### Troubleshoot
 ```
-Bad Request 400 
-1. check url should always end to "/" 
-   i.e. https://djangoblog.iwebitechnology.xyz/ or https://djangoblog.iwebitechnology.xyz/chat/join_me/
-2. possible nginx config
+Bad Request 400 and Page not found (404) not working
+1. check url in template should use route path in href="{% 'homepage' %}" 
+2. possible nginx config, change to
       proxy_set_header Host $host;
-3. possible insufficient memory 
-4. increase wokers in gunicorn.service
+3. increase wokers in gunicorn.service
     workers = 6
+4. possible insufficient memory 
 ```
