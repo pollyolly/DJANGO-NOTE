@@ -448,4 +448,7 @@ server {
 Bad Request 400 
 1. check url should always end to "/" 
    i.e. https://djangoblog.iwebitechnology.xyz/ or https://djangoblog.iwebitechnology.xyz/chat/join_me/
+2. possible nginx config
+      proxy_set_header Host $host;
+3. possible insufficient memory 
 ```
