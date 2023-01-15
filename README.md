@@ -143,6 +143,12 @@ $django-admin startproject djangoblog .
 $cd djangoblog
 $python manage.py runserver <custom port number; default 8000>
 ```
+### Regenerate SECRETE_KEY
+```
+$pienv shell
+$python -c 'import secrets; print(secrets.token_hex(60))'
+#should be above 55
+```
 ### Check Pipe python interpreter path
 ```
 $cd djangoblog
