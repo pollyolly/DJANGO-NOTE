@@ -451,4 +451,6 @@ Bad Request 400
 2. possible nginx config
       proxy_set_header Host $host;
 3. possible insufficient memory 
+4. increase wokers in gunicorn.service
+    workers = 6
 ```
