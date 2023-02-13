@@ -455,4 +455,8 @@ Bad Request 400 and Page not found (404) not working
 5. restart gunicorn
     service gunicorn restart
 6. possible insufficient memory 
+
+Table not exists
+1. Re-creation of Migration table by specifying the App Name
+   $python manage.py makemigrations flipbook
 ```
