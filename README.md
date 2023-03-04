@@ -187,6 +187,19 @@ $vi urls.py
       path('_debug_/', include(debug_toolbar.urls))
     ]
 ```
+### Django Local Development
+```
+#settings.py
+#pip install whitenoise
+DEBUG = True
+INSTALLED_APPS = [
+  'whitenoise.runserver_nostatic', #For Local/Development Use
+]
+MIDDLEWARE = [
+  'whitenoise.middleware.WhiteNoiseMiddleware' #For Local/Development Use
+]
+#STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage" #For Local/Development Use
+```
 ### Django Static Files Deployment
 ```
 settings.py
