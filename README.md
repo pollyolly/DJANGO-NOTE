@@ -33,6 +33,11 @@ $pip3 install pipenv
 ```
 $mkdir djangoblog
 $cd djangoblog
+
+#Set python path 
+$which python3
+$pipenv --python /opt/homebrew/bin/python3
+
 $pipenv shell
 $pipenv install django
   - install django in virtual environment
