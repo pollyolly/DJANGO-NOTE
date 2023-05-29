@@ -463,6 +463,13 @@ server {
 
 ### Troubleshoot
 ```
+pipenv install throws --system is intended to be used for pre-existing Pipfile installation
+1. cd app_folder
+2. pipenv shell.   ->
+3. pipenv --rm     -> Delete current virtual environment or
+4. pipenv --venv.  -> check location virtual environment
+5. rm -r <folder of virtual environment>
+6. pipenv install
 Bad Request 400 and Page not found (404) not working
 1. use incognito to browse changes
 2. check url in template should use route path in href="{% 'homepage' %}" 
