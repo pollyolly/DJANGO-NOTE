@@ -462,15 +462,17 @@ server {
 [Mastodon Nginx Ref](https://github.com/mastodon/mastodon/blob/main/dist/nginx.conf)
 
 ### Troubleshoot
+[pipenv install throws --system is intended to be used for pre-existing Pipfile installation](https://github.com/pypa/pipenv/issues/5052)
 ```
-pipenv install throws --system is intended to be used for pre-existing Pipfile installation
 1. cd app_folder
 2. pipenv shell.   ->
 3. pipenv --rm     -> Delete current virtual environment or
 4. pipenv --venv.  -> check location virtual environment
 5. rm -r <folder of virtual environment>
 6. pipenv install
+```
 Bad Request 400 and Page not found (404) not working
+```
 1. use incognito to browse changes
 2. check url in template should use route path in href="{% 'homepage' %}" 
 3. possible nginx config, change to
@@ -480,8 +482,9 @@ Bad Request 400 and Page not found (404) not working
 5. restart gunicorn
     service gunicorn restart
 6. possible insufficient memory 
-
+```
 Table not exists
+```
 1. Re-creation of Migration table by specifying the App Name
    $python manage.py makemigrations flipbook
 ```
