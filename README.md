@@ -24,13 +24,13 @@ check python version
 $python3 --version
 ```
 ### Install pip3
-```
+```vim
 $pip3 install pipenv
   - dependency management tool to install python dependencies in 
                virtual environment to prevent clash with other dependencies.
 ```
 ### Install django in the project
-```
+```vim
 $mkdir djangoblog
 $cd djangoblog
 
@@ -43,28 +43,28 @@ $pipenv install django
   - install django in virtual environment
 ```
 ### pip files modules generate
-```
+```vim
 $pipenv shell
 $cd djangoblog
 $pipenv run pip freeze > requirements.txt
 $vi Pipfile - just like package.json where application dependencies are written. django="*" (latest or any version of django)
 ```
 ### pip list
-```
+```vim
 $pip list - check django installed modules
 ```
 ### pipenv list ###
-```
+```vim
 $pipenv run pip freeze > requirements.txt
 ```
 ### Activate Virtual Environment to use python interpreter inside not globally
-```
+```vim
 $cd djangoblog
 $pipenv shell
  -you always need to do this when accessing the project after exit the project
 ```
 ### Install Requirements
-```
+```vim
 $pip3 install -r requirements.txt
 
 Note: Manual install the module if conflicting.
@@ -74,18 +74,18 @@ $pip3 install <module>
 [Doc](https://www.psycopg.org/install/)
 
 [Failed install psycopg](https://stackoverflow.com/questions/34304833/failed-building-wheel-for-psycopg2-macosx-using-virtualenv-and-pip)
-```
+```vim
 // Update if Failed to install
 $cd djangoblog
 $pip list --outdated
 $pip install --upgrade wheel
 $pip install --upgrade setuptools
 ```
-```
+```vim
 $sudo apt install python3-dev libpq-dev
 $pip install psycopg2
 ```
-```
+```python
 settings.py
 DATABASES = {
     'default': {
@@ -97,7 +97,7 @@ DATABASES = {
     }
 }
 ```
-```
+```vim
 pg_service.conf
 [my_service]
 host=localhost
@@ -105,15 +105,16 @@ user=USER
 dbname=NAME
 port=5432
 ```
-```
+```vim
 .my_pgpass
 localhost:5432:NAME:USER:PASSWORD
 ```
 ### MySQL Client
 ```
 $pip install pymysql
-
-Edit __init__.py in main application
+```
+```python
+#Edit __init__.py in main application
 
 import pymysql
 pymysql.install_as_MySQLdb()
@@ -132,30 +133,30 @@ DATABASES = {
 }
 ```
 ### Start django new project
-```
+```vim
 $cd djangoblog
 $django-admin startproject djangoblog .
   -dot (.) means it will the use existing folder and will not create new storefront folder.
-  
- 
- settings.py
+```
+```python
+ #settings.py
  INSTALLED_APPS = [
   djangoblog //Created Apps are Added here
  ]
 ```
 ### Run Django Project
-```
+```vim
 $cd djangoblog
 $python manage.py runserver <custom port number; default 8000>
 ```
 ### Regenerate SECRETE_KEY
-```
+```vim
 $pienv shell
 $python -c 'import secrets; print(secrets.token_hex(60))'
 #should be above 55
 ```
 ### Check Pipe python interpreter path
-```
+```vim
 $cd djangoblog
 $pipenv --venv
    -can be used in vscode to setup the python interpreter (vscode used the default python interpreter installed globally)
@@ -163,12 +164,12 @@ $pipenv --venv
    to add in vscode: /root/.local/share/virtualenvs/djangoblog-6hn45Vis/bin/python
 ```
 ### Creating New App (Take Note Django is a collection of App like modular in mind)
-```
+```vim
 $cd djangoblog
 $python manage.py startapp blogpost
 ```
 ### Django Debug Toolbar
-```
+```vim
 https://django-debug-toolbar.readthedocs.io/en/latest/installation.html
 
 $pipenv install django-debug-toolbar
@@ -193,7 +194,7 @@ $vi urls.py
     ]
 ```
 ### Django Local Development
-```
+```python
 #settings.py
 #pip install whitenoise
 DEBUG = True
@@ -206,7 +207,7 @@ MIDDLEWARE = [
 #STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage" #For Local/Development Use
 ```
 ### Django Static Files Deployment
-```
+```python
 settings.py
 INSTALLED_APPS = [
   'django.contrib.staticfiles'
@@ -217,20 +218,20 @@ STATICFILES_DIRS = [
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles") #set where collectstatic copy and put the files
 ```
-```
+```python
 templating
 {% load static %}
 
 <link href="{% static 'bootstrap.min.css' %}" rel="stylesheet">
 ```
-```
+```vim
 $cd djangoblog
 $mkdir staticflies
 $python manage.py collectstatic
 ```
 ### Django Media Files
-```
-settings.py
+```python
+#settings.py
 MEDIA_URL = '/uploaded_files/'
 MEDIA_ROOT = os.path.join(BASE_DIR, "")
 
@@ -244,12 +245,12 @@ TEMPLATES = [
     },
 ]
 ```
-```
+```python
 templating
 <img width="100%" height="225" src="{{ MEDIA_URL }}{{post.thumbnail }}">
 ```
-```
-main application urls.py
+```python
+#main application urls.py
 
 from django.conf import settings
 from django.conf.urls.static import static
@@ -258,7 +259,7 @@ urlpatterns = [
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 ```
 ### Django Models and Migrations
-```
+```vim
 After  editing models.py
 $python manage.py makemigrations
   - this will run latest migrations
@@ -267,12 +268,12 @@ $python manage.py migrate
 
 ```
 ### Django Create Super User
-```
+```vim
 $python manage.py createsuperuser
    - this will create admin account fro django default admin login form
 ```
 ### Django Gunicorn
-```
+```vim
 $cd djangoblog
 $pipenv shell
 $pipenv install gunicorn
@@ -280,18 +281,18 @@ Test Gunicorn if works inside pipenv
 $gunicorn --bind 0.0.0.0:8000 djangoblog.wsgi:application 
 ```
 ### Check Deployment
-```
+```vim
 $cd <project folder>
 $pipenv shell
 $python manage.py check --deploy
 ```
 ### Django NGINX
-```
+```vim
 $apt install nginx
 ```
 ## Django NGINX Deployment
 Gunicorn Service (wsgi)
-```
+```vim
 # $touch gunicorn.socket
 # /etc/systemd/system/gunicorn.socket
 [Unit]
@@ -303,7 +304,7 @@ ListenStream=/run/gunicorn.sock
 [Install]
 WantedBy=sockets.target
 ```
-```
+```vim
 # $touch gunicorn.service
 #/etc/systemd/system/gunicorn.service
 
@@ -327,26 +328,26 @@ ExecStart=/root/.local/share/virtualenvs/djangoblog-B6XojO9L/bin/gunicorn \
 WantedBy=multi-user.target
 ```
 Run gunicorn socket
-```
+```vim
 $sudo systemctl start gunicorn.socket
 $sudo systemctl enable gunicorn.socket
 ```
 Check Status
-```
+```vim
 $sudo systemctl status gunicorn.socket
 ```
  Check File (Automatically created)
-```
+```vim
 $file /run/gunicorn.sock
 ```
 Check activate gunicorn
-```
+```vim
 $curl --unix-socket /run/gunicorn.sock localhost
 
 $sudo systemctl status gunicorn
 ```
 Daphne Service (asgi)
-```
+```vim
 # $touch daphne.service
 #/etc/systemd/system/daphne.service
 
@@ -366,12 +367,12 @@ Restart=on-failure
 WantedBy=multi-user.target
 ```
 Start/Restart Daphne Service
-```
+```vim
 systemctl daemon-reload
 systemctl start daphne.service
 systemctl status daphne.service
 ```
-```
+```vim
 #/etc/nginx/sites-available/djangoblog
 upstream django-websocket {
         server 127.0.0.1:8991;
