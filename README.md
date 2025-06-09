@@ -19,8 +19,8 @@ https://preneure.com/the-ultimate-django-cheat-sheet/
 ## DJango Project
 ### Install basic requirements
 ### Check python version
-```
 Check python version
+```
 $python3 --version
 ```
 ### Install pip3
