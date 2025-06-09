@@ -26,11 +26,11 @@ $python3 --version
 ### Install pip3
 Upgrade
 ```
-$python -m pip install --upgrade pip
+$python3 -m pip install --upgrade pip
 ```
 Downgrade
 ```
-$python -m pip install pip==19.0
+$python3 -m pip install pip==19.0
 ```
 Install PIPENV
 ```vim
