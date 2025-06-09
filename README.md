@@ -72,13 +72,18 @@ $cd djangoblog
 $pipenv shell
  -you always need to do this when accessing the project after exit the project
 ```
-### Remove the project pipenv environment
+### Remove the project pipenv virtual environment
 ```vim
 $cd project-folder
 $pipenv --rm
 - Remove the project if necessary
 ```
 ### Install Requirements
+Install dependencies to virtual environment
+```vim
+$pipenv install -r requirements.txt
+```
+or install globally
 ```vim
 $pip3 install -r requirements.txt
 
