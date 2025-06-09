@@ -20,16 +20,16 @@ https://preneure.com/the-ultimate-django-cheat-sheet/
 ### Install basic requirements
 ### Check python version
 Check python version
-```
+```vim
 $python3 --version
 ```
 ### Install pip3
 Upgrade
-```
+```vim
 $python3 -m pip install --upgrade pip
 ```
 Downgrade
-```
+```vim
 $python3 -m pip install pip==19.0
 ```
 Install PIPENV
