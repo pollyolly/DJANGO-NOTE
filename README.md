@@ -29,7 +29,7 @@ $pip3 install pipenv
   - dependency management tool to install python dependencies in 
                virtual environment to prevent clash with other dependencies.
 ```
-### Install django in the project
+### Install django in the project environment
 ```vim
 $mkdir djangoblog
 $cd djangoblog
@@ -62,6 +62,12 @@ $pipenv run pip freeze > requirements.txt
 $cd djangoblog
 $pipenv shell
  -you always need to do this when accessing the project after exit the project
+```
+### Remove pipenv environment
+```
+$cd project-folder
+$pipenv --rm
+- Remove the project if necessary
 ```
 ### Install Requirements
 ```vim
