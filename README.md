@@ -53,7 +53,7 @@ $vi Pipfile - just like package.json where application dependencies are written.
 ```vim
 $pip list - check django installed modules
 ```
-### pipenv list ###
+### pipenv list
 ```vim
 $pipenv run pip freeze > requirements.txt
 ```
@@ -63,8 +63,8 @@ $cd djangoblog
 $pipenv shell
  -you always need to do this when accessing the project after exit the project
 ```
-### Remove pipenv environment
-```
+### Remove the project pipenv environment
+```vim
 $cd project-folder
 $pipenv --rm
 - Remove the project if necessary
