@@ -3,7 +3,6 @@
 - [Django Tutorial for Beginner](https://www.youtube.com/watch?v=rHux0gMZ3Eg)
 - [Django Fun](https://django.fun/)
 - [Django NginX Gunicorn Postgres](https://www.digitalocean.com/community/tutorials/how-to-set-up-django-with-postgres-nginx-and-gunicorn-on-ubuntu-20-04)
-- [Setup Django NginX Gunicorn Postgres](https://arctype.com/blog/install-django-ubuntu/)
 - [Customize the Django Admin With Python](https://realpython.com/customize-django-admin-python/)
 - [Django Admin Cookbook](https://books.agiliq.com/projects/django-admin-cookbook/en/latest/export.html)
 
