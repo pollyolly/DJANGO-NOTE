@@ -1,10 +1,9 @@
 # DJANGO Note
-DJango Sample Project 
-```
-source yt: https://www.youtube.com/watch?v=rHux0gMZ3Eg
-articles: https://django.fun/
-```
-### Django Tutorials
+### Django Development Tutorial
+[Django Tutorial for Beginner](https://www.youtube.com/watch?v=rHux0gMZ3Eg)
+
+[Django Fun](https://django.fun/)
+### Django Deployment Tutorial
 [Django NginX Gunicorn Postgres](https://www.digitalocean.com/community/tutorials/how-to-set-up-django-with-postgres-nginx-and-gunicorn-on-ubuntu-20-04)
 
 [Setup Django NginX Gunicorn Postgres](https://arctype.com/blog/install-django-ubuntu/)
