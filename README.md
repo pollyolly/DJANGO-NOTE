@@ -507,5 +507,10 @@ Bad Request 400 and Page not found (404) not working
 Table not exists
 ```
 1. Re-creation of Migration table by specifying the App Name
-   $python manage.py makemigrations flipbook
+   $python manage.py makemigrations <project-folder>
+```
+Websocket Connection State Close
+```
+1. Make sure to update the port in /etc/systemd/system/daphne.service, Nginx Config proxy_pass and ufw firewall.
+If using Cloudflare you may use Cloudflare Network Accepted Port.
 ```
