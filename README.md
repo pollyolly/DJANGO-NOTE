@@ -1,20 +1,12 @@
 # DJANGO Note
 ### Django Development Tutorial
-[Django Tutorial for Beginner](https://www.youtube.com/watch?v=rHux0gMZ3Eg)
+- [Django Tutorial for Beginner](https://www.youtube.com/watch?v=rHux0gMZ3Eg)
+- [Django Fun](https://django.fun/)
+- [Django NginX Gunicorn Postgres](https://www.digitalocean.com/community/tutorials/how-to-set-up-django-with-postgres-nginx-and-gunicorn-on-ubuntu-20-04)
+- [Setup Django NginX Gunicorn Postgres](https://arctype.com/blog/install-django-ubuntu/)
+- [Customize the Django Admin With Python](https://realpython.com/customize-django-admin-python/)
+- [Django Admin Cookbook](https://books.agiliq.com/projects/django-admin-cookbook/en/latest/export.html)
 
-[Django Fun](https://django.fun/)
-### Django Deployment Tutorial
-[Django NginX Gunicorn Postgres](https://www.digitalocean.com/community/tutorials/how-to-set-up-django-with-postgres-nginx-and-gunicorn-on-ubuntu-20-04)
-
-[Setup Django NginX Gunicorn Postgres](https://arctype.com/blog/install-django-ubuntu/)
-```
-https://realpython.com/customize-django-admin-python/
-https://books.agiliq.com/projects/django-admin-cookbook/en/latest/export.html
-https://www.youtube.com/watch?v=fx80N0eQOos&list=PLlM3i4cwc8zBRQOGXuLrCLNfpVOuVLuwZ&index=7
-https://medium.com/@jacobtamus/deploying-django-rest-mariadb-gunicorn-supervisor-nginx-on-centos-7-linux-990ca877e72b
-https://www.youtube.com/watch?v=lgK238BvuL0
-https://preneure.com/the-ultimate-django-cheat-sheet/
-```
 ## DJango Project
 ### Install basic requirements
 ### Check python version
